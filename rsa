@@ -6,7 +6,7 @@ Factorize as many numbers as possible into a product of two smaller numbers.
         One number per line
         You can assume that all lines will be valid natural numbers\
                 greater than 1
-        You can assume that there will be no empy line, and no space\
+        You can assume that there will be no empty line and no space\
                 before and after the valid number
         The file will always end with a new line
     Output format: n=p*q
@@ -14,10 +14,10 @@ Factorize as many numbers as possible into a product of two smaller numbers.
         p and q don’t have to be prime numbers
         See example
     You can work on the numbers of the file in the order of your choice
-    Your program should run without any dependency: You will not be ablei\
+    Your program should run without any dependency: You will not be able \
             to install anything on the machine we will run your program on
     Time limit: Your program will be killed after 5 seconds\
-            if it hasn’t finish
+            if it hasn’t finished
     Push all your scripts, source code, etc… to your repository
 """
 # library to get arguments
@@ -25,29 +25,29 @@ import sys
 
 
 # fn unpack number factorial
-def fc():
+def fac():
     """
-    function fc to search file to convert number and format n=p*q
+    function fac to search files to convert numbers and format n=p*q
     """
     try:
-        revfile = sys.argv[1]
-        with open(revfile) as f:
-            for revnumber in f:
-                revnumber = int(revnumber)
-                if revnumber % 2 == 0:
-                        print("{}={}*{}".format(revnumber, revnumber // 2, 2))
+        newfile = sys.argv[1]
+        with open(newfile) as f:
+            for newnumber in f:
+                newnumber = int(newnumber)
+                if newnumber % 2 == 0:
+                        print("{}={}*{}".format(newnumber, newnumber // 2, 2))
                         continue
                 i = 3
-                while i < revnumber // 2:
-                    if revnumber % i == 0:
-                        print("{}={}*{}".format(revnumber, revnumber // i, i))
+                while i < newnumber // 2:
+                    if newnumber % i == 0:
+                        print("{}={}*{}".format(newnumber, newnumber // i, i))
                         break
                     i = i + 2
-                if i == (revnumber // 2) + 1:
-                    print("{}={}*{}".format(revnumber, revnumber, 1))
+                if i == (newnumber // 2) + 1:
+                    print("{}={}*{}".format(newnumber, newnumber, 1))
     except (IndexError):
         pass
 
 
 # autostart
-fc()
+fac()
